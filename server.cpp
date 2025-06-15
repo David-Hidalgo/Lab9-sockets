@@ -19,7 +19,11 @@ int main() {
     serverAddr.sin_addr.s_addr = INADDR_ANY;
 
     if (bind(listenSocket, reinterpret_cast<sockaddr*>(&serverAddr), sizeof(serverAddr)) < 0) {
-        std::cerr << "Bind failed: " << std::strerror(errno) << "\n";
+        if (errno == EADDRINUSE) {
+            std::cerr << "Port already in use. Closing existing socket.\n";
+        } else {
+            std::cerr << "Bind failed: " << std::strerror(errno) << "\n";
+        }
         close(listenSocket);
         return 1;
     }

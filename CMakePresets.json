@@ -24,6 +24,18 @@
 				"CMAKE_CXX_COMPILER": "C:/msys64/ucrt64/bin/g++.exe",
 				"CMAKE_BUILD_TYPE": "Debug"
 			}
+		},
+		{
+			"name": "GCC14",
+			"displayName": "GCC 14.2.0 x86_64-linux-gnu",
+			"description": "Using compilers: C = /usr/bin/gcc, CXX = /usr/bin/g++",
+			"binaryDir": "${sourceDir}/out/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+				"CMAKE_C_COMPILER": "/usr/bin/gcc",
+				"CMAKE_CXX_COMPILER": "/usr/bin/g++",
+				"CMAKE_BUILD_TYPE": "Debug"
+			}
 		}
 	]
 }
